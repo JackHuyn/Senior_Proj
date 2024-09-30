@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv5l1mdjxin3q"]
+
+[ext_resource type="PackedScene" uid="uid://c7i0s1vicvik0" path="res://art/player.glb" id="1_kkkry"]
+[ext_resource type="Script" path="res://player.gd" id="1_m54vv"]
+[ext_resource type="AudioStream" uid="uid://ca7qihtkshvi6" path="res://art/Lab1water.mp3" id="3_oi067"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pn0u3"]
+radius = 1.65591
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 7
+script = ExtResource("1_m54vv")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("1_kkkry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420843, 0)
+shape = SubResource("SphereShape3D_pn0u3")
+
+[node name="SquashSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_oi067")
+volume_db = 9.0

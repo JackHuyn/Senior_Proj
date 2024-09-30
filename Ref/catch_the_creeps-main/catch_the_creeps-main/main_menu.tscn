@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://coimakwgpqbn1"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_3s5u8"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3s5u8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 51.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0.654902, 0, 1)
+text = "Squash The Creeps"
+
+[node name="Instructions" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Smart choice. you gotta know what your up to."
+text = "Instructions"
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+tooltip_text = "You guitting already B#$%"
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

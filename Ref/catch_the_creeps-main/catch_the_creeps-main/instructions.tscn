@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqwk6hrmiuasc"]
+
+[ext_resource type="Script" path="res://instructions.gd" id="1_h0bl8"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0bl8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105556
+anchor_top = 0.224074
+anchor_right = 0.890278
+anchor_bottom = 0.564815
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+text = "Here is how the game works:
+	1. You move by using the arrow keys or the usual (w, a, s, d) keys.
+	2. You can also jump using space.
+	3. Your goal would bee to eliminat 7 Creeps in less than 30 seconds.
+	4. You remove each one of the Creeps by jumping on them.
+	5. If you hit a Creep while on the surface you die.
+	7. If the timer runs out you also lose."
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Return_MainMenu" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.313889
+anchor_top = 0.62963
+anchor_right = 0.591667
+anchor_bottom = 0.67963
+offset_left = 1.52588e-05
+offset_right = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return 2 Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Return_MainMenu" to="." method="_on_return_main_menu_pressed"]
